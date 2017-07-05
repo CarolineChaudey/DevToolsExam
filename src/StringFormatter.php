@@ -14,9 +14,9 @@
           return $this->concat($before, $after);
       }
 
-      public function prefix(String $prefix, String $word, bool toCamelCase)
+      public function prefix(String $prefix, String $word, bool $toCamelCase)
       {
-        if (toCamelCase) {
+        if ($toCamelCase) {
           return $this->toCamelCase($prefix, $word);
         }
         return $this->concat($prefix, $word);

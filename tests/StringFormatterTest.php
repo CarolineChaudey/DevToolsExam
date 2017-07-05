@@ -12,15 +12,15 @@ class StringFormatterTest extends TestCase
 {
     private $stringFormater;
 
-  /**
-  * @before
-  */
-  public function setupProperties()
-  {
-      $this->stringFormater = new StringFormatter();
-  }
+    /**
+    * @before
+    */
+    public function setupProperties()
+    {
+        $this->stringFormater = new StringFormatter();
+    }
 
-    public function testConcat_ok()
+    public function testConcat()
     {
         $result = $this->stringFormater->concat("Hello ", "world");
         $this->assertEquals($result, "Hello world");
@@ -34,5 +34,15 @@ class StringFormatterTest extends TestCase
         $this->assertEquals($this->stringFormater->toCamelCase("Camel", "Case"), "camelCase");
         $this->assertEquals($this->stringFormater->toCamelCase("Camel", "case"), "camelCase");
         $this->assertEquals($this->stringFormater->toCamelCase("camel", "Case"), "camelCase");
+    }
+
+    public function testPrefix()
+    {
+      // with camelCase
+      $this->assertEquals($this->stringFormater->prefix("camel", "case", true), "camelCase");
+      $this->assertNotEquals($this->stringFormater->prefix("camel", "case", true), "camelcase");
+      // without camelCase
+      $this->assertNotEquals($this->stringFormater->prefix("camel", "case", false), "camelCase");
+      $this->assertEquals($this->stringFormater->prefix("camel", "case", false), "camelcase");
     }
 }
