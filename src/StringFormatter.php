@@ -21,4 +21,9 @@
           }
           return $this->concat($prefix, $word);
       }
+
+      public function suffix(String $suffix, String $word, bool $toCamelCase)
+      {
+          return $this->prefix($word, $suffix, $toCamelCase);
+      }
   }

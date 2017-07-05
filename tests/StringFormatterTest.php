@@ -39,10 +39,20 @@ class StringFormatterTest extends TestCase
     public function testPrefix()
     {
         // with camelCase
-      $this->assertEquals($this->stringFormater->prefix("camel", "case", true), "camelCase");
+        $this->assertEquals($this->stringFormater->prefix("camel", "case", true), "camelCase");
         $this->assertNotEquals($this->stringFormater->prefix("camel", "case", true), "camelcase");
       // without camelCase
-      $this->assertNotEquals($this->stringFormater->prefix("camel", "case", false), "camelCase");
+        $this->assertNotEquals($this->stringFormater->prefix("camel", "case", false), "camelCase");
         $this->assertEquals($this->stringFormater->prefix("camel", "case", false), "camelcase");
+    }
+
+    public function testSuffix()
+    {
+        // with camelCase
+        $this->assertEquals($this->stringFormater->suffix("camel", "case", true), "caseCamel");
+        $this->assertNotEquals($this->stringFormater->suffix("camel", "case", true), "casecamel");
+        // without camelCase
+        $this->assertNotEquals($this->stringFormater->suffix("camel", "case", false), "caseCamel");
+        $this->assertEquals($this->stringFormater->suffix("camel", "case", false), "casecamel");
     }
 }
