@@ -22,7 +22,7 @@
           return $this->concat($prefix, $word);
       }
 
-      public public function suffix(String $suffix, String $word, bool $toCamelCase)
+      public function suffix(String $suffix, String $word, bool $toCamelCase)
       {
         return $this->prefix($word, $suffix, $toCamelCase);
       }
