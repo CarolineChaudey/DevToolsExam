@@ -1,0 +1,14 @@
+{
+    "name": "chaudey/dev-tools-exam",
+    "description": "Done for a computer exam.",
+    "require": {
+        "phpunit/phpunit": "^6.2",
+        "friendsofphp/php-cs-fixer": "^2.3"
+    },
+    "authors": [
+        {
+            "name": "Caroline Chaudey",
+            "email": "caroline.chaudey.sio@gmail.com"
+        }
+    ]
+}
