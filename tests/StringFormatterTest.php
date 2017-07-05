@@ -10,29 +10,29 @@ use PHPUnit\Framework\TestCase;
 
 class StringFormatterTest extends TestCase
 {
-  private $stringFormater;
+    private $stringFormater;
 
   /**
   * @before
   */
-  public function setupProperties() {
-    $this->stringFormater = new StringFormatter();
+  public function setupProperties()
+  {
+      $this->stringFormater = new StringFormatter();
   }
 
-  public function testConcat_ok() {
-    $result = $this->stringFormater->concat("Hello ", "world");
-    $this->assertEquals($result, "Hello world");
-  }
+    public function testConcat_ok()
+    {
+        $result = $this->stringFormater->concat("Hello ", "world");
+        $this->assertEquals($result, "Hello world");
+    }
 
-  public function testToCamelCase() {
-    $this->assertEquals($this->stringFormater->toCamelCase("camel", "case"), "camelCase");
-    $this->assertEquals($this->stringFormater->toCamelCase("CAMEL", "CASE"), "camelCase");
-    $this->assertEquals($this->stringFormater->toCamelCase("CAMEL", "cASE"), "camelCase");
-    $this->assertEquals($this->stringFormater->toCamelCase("Camel", "Case"), "camelCase");
-    $this->assertEquals($this->stringFormater->toCamelCase("Camel", "case"), "camelCase");
-    $this->assertEquals($this->stringFormater->toCamelCase("camel", "Case"), "camelCase");
-  }
+    public function testToCamelCase()
+    {
+        $this->assertEquals($this->stringFormater->toCamelCase("camel", "case"), "camelCase");
+        $this->assertEquals($this->stringFormater->toCamelCase("CAMEL", "CASE"), "camelCase");
+        $this->assertEquals($this->stringFormater->toCamelCase("CAMEL", "cASE"), "camelCase");
+        $this->assertEquals($this->stringFormater->toCamelCase("Camel", "Case"), "camelCase");
+        $this->assertEquals($this->stringFormater->toCamelCase("Camel", "case"), "camelCase");
+        $this->assertEquals($this->stringFormater->toCamelCase("camel", "Case"), "camelCase");
+    }
 }
-
-
-?>
