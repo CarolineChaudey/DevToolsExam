@@ -23,6 +23,15 @@ class StringFormatterTest extends TestCase
     $result = $this->stringFormater->concat("Hello ", "world");
     $this->assertEquals($result, "Hello world");
   }
+
+  public function testToCamelCase() {
+    $this->assertEquals($this->stringFormater->toCamelCase("camel", "case"), "camelCase");
+    $this->assertEquals($this->stringFormater->toCamelCase("CAMEL", "CASE"), "camelCase");
+    $this->assertEquals($this->stringFormater->toCamelCase("CAMEL", "cASE"), "camelCase");
+    $this->assertEquals($this->stringFormater->toCamelCase("Camel", "Case"), "camelCase");
+    $this->assertEquals($this->stringFormater->toCamelCase("Camel", "case"), "camelCase");
+    $this->assertEquals($this->stringFormater->toCamelCase("camel", "Case"), "camelCase");
+  }
 }
 
 
